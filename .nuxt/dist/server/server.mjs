@@ -1,0 +1,1 @@
+export { default } from "file:///Users/danielwest/Documents/GitHub/annotation-system/node_modules/.pnpm/@nuxt+vite-builder@3.15.4_@types+node@22.13.9_lightningcss@1.29.2_magicast@0.3.5_rollup_c28945ebc10488e32c67a778b10d30b1/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
