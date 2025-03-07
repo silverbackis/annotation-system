@@ -25,6 +25,7 @@
       :documents="documents"
       :dropdown-options="dropdownOptions"
       :annotations="annotations"
+      :annotation-id="annotationId"
       @update-documents="updateDocuments"
       @update-annotations="updateAnnotations"
       @update-dropdown-options="updateDropdownOptions"
@@ -66,6 +67,7 @@ export default {
   },
   data() {
     return {
+      annotationId: undefined,
       activeTab: 'create',
       tabs: [
         { id: 'create', label: 'Create/Edit Annotation' },
@@ -139,7 +141,8 @@ export default {
       this.activeTab = 'create';
       // The actual editing will be handled by the AnnotationForm component
       // We'll pass the annotationId via an event bus or other method
-      // this.$root.$emit('edit-annotation', annotationId);
+
+      this.annotationId = annotationId
     },
 
     handleDeleteAnnotation(annotationId) {

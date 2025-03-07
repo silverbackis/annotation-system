@@ -445,6 +445,10 @@ export default {
     dropdownOptions: {
       type: Object,
       required: true
+    },
+    annotationId: {
+      type: Number,
+      required: false
     }
   },
   data() {
@@ -460,13 +464,10 @@ export default {
       deleteConfirmModal: { type: null, id: null, name: '', docName: '' }
     };
   },
-  created() {
-    // Listen for edit annotation event
-    // this.$root.$on('edit-annotation', this.loadAnnotationForEdit);
-  },
-  beforeDestroy() {
-    // Clean up event listener
-    // this.$root.$off('edit-annotation', this.loadAnnotationForEdit);
+  watch: {
+    annotationId: function (newAnnotationId) {
+      this.loadAnnotationForEdit(newAnnotationId)
+    }
   },
   methods: {
     getEmptyFormData() {
